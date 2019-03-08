@@ -68,10 +68,17 @@ export class AppComponent implements OnInit {
     const series = this.chart.ref.series;
     // console.log('removeCity');
     // console.log(series);
-    for (let serie of series) {
+    // for (let serie of series) {
+    //   console.log(serie.name);
+    //   if (ken.prefName === serie.name) {
+    //     this.chart.removeSerie(serie.index);
+    //   }
+    // }
+
+    for (let i = 0; i < series.length; i++) {
       // console.log(serie.name);
-      if (ken.prefName === serie.name) {
-        this.chart.removeSerie(serie.index);
+      if (ken.prefName === series[i].name) {
+        this.chart.removeSerie(i);
       }
     }
   }
