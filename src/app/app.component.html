@@ -4,9 +4,10 @@
     <div class="row">
         <p *ngIf="!kens" class="col-xs-12">データ準備中…</p>
         <div class="col-xs-3" *ngFor="let ken of kens">
-            <label class="control-label"><input type="checkbox" name="ken.prefCode" (change)="valChange($event, ken)">
+            <label class="control-label"><input type="checkbox" name="city[{{ken.prefCode}}]"
+                    (change)="valChange($event, ken)">
                 {{ ken.prefName }}</label>
         </div>
     </div>
-    <div [chart]="chart"></div>
+    <div [chart]=" chart"></div>
 </div>
